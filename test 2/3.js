@@ -1,16 +1,21 @@
 function enhanceWords(words) {
-  return words.map((word) => {
-    if (word.length < 4) {
-      return word.toLowerCase();
-    }
-    if (word.length % 2 === 0) {
-      return `${word}*`;
-    } else {
-      return word.toUpperCase();
-    }
-  });
-}
+  const enhancedWords = [];
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
 
+    if (word.length > 4) {
+      word = word.toUpperCase();
+    }
+
+    if (i % 2 === 0) {
+      word += "*";
+    }
+
+    enhancedWords.push(word);
+  }
+
+  return enhancedWords;
+}
 console.log(
   enhanceWords(["table", "chair", "Lamp", "desk", "bookshelf", "Couch"])
 );

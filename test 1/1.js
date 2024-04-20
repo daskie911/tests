@@ -13,3 +13,4 @@ function calculateFactorial(n) {
     return factorial;
 }
 
+calculateFactorial(5); 

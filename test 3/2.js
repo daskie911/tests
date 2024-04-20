@@ -32,15 +32,19 @@ const users2 = [
 function combineUsers(users, users2) {
   const combinedUsers = [];
   for (let i = 0; i < users.length; i++) {
-    combinedUsers.push(users[i]);
+    combinedUsers.push(users[i].name);
   }
   for (let i = 0; i < users2.length; i++) {
-    combinedUsers.push(users2[i]);
+    combinedUsers.push(users2[i].name);
   }
-  for (let i = 0; i < combinedUsers.length; i++) {
-    console.log(`Name: ${combinedUsers[i].name}`);
-  }
+  combinedUsers.sort();
   return combinedUsers;
 }
 
 console.log(combineUsers(users, users2));
+
+
+const allUsers = [...users, ...users2];
+const sortedNames = allUsers.map((user) => user.name);
+sortedNames.sort();
+console.log("Відсортовані імена користувачів:", sortedNames);
